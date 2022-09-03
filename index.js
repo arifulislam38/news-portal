@@ -83,7 +83,32 @@ const modalData = async(newsId) =>{
     const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
+    const newsData = data.data[0];
+    const modalImage = document.getElementById('modal-image');
+    modalImage.innerHTML = `
+        <img src="${newsData.image_url}"class="img-fluid">
+    `;
+    const modalText = document.getElementById('modal-text');
+    const createP = document.createElement('p');
+    createP.innerText = `${newsData.details}`;
+    modalText.appendChild(createP);
+
+    const authorName = document.getElementById('authorName');
+    authorName.innerText = `${newsData.author.name}`;
+
+    const publishDate = document.getElementById('publishDate');
+    publishDate.innerText = `${newsData.author.published_date}`;
+
+    const badge = document.getElementById('badge');
+    badge.innerText = `${newsData.rating.badge}`;
+
+
+    const author = document.getElementById('author');
+    author.innerHTML = `
+        <img src="${newsData.author.img}" style="width:40px; height:40px; border-radius:50%;">
+        <p class="mb-0">${newsData.author.name}</p>
+    `
+    
 }
 
 
