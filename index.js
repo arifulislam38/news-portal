@@ -1,3 +1,4 @@
+const spinner = document.getElementById('spinner');
 
 const loadCategory = async() =>{
     const url = `https://openapi.programming-hero.com/api/news/categories`;
@@ -6,6 +7,7 @@ const loadCategory = async() =>{
     displayCategory(data.data.news_category);
 }
 const displayCategory = category =>{
+    spinner.style.display = 'block';
     for(const value of category){
         console.log(value.category_name);
         const categoryId = document.getElementById('categoryList');
@@ -15,13 +17,14 @@ const displayCategory = category =>{
         categoryId.appendChild(li);
         
     }
-   
+    spinner.style.display = 'none';
 }
 
 
 
 
 const showData = async(value,catName) =>{
+    spinner.style.display = 'block';
     const url = `https://openapi.programming-hero.com/api/news/category/${value}`;
     const res = await fetch(url);
     const data = await res.json();
@@ -35,7 +38,7 @@ const showData = async(value,catName) =>{
         cardDiv.classList.add('mb-2','p-0','col-6');
         cardDiv.setAttribute('style','max-width: 560px;')
         cardDiv.innerHTML = `
-        <div class="row border rounded m-0 p-2">
+        <div class="pointer row border rounded m-0 p-2">
             <div class="col-3 ps-0">
                 <img src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="This is an image">
             </div>
@@ -73,6 +76,6 @@ const showData = async(value,catName) =>{
     else{
         newsCountField.value = `${newsEs.length} items found for ${catName} `;
     }
-
+    spinner.style.display = 'none';
 }
 loadCategory();
