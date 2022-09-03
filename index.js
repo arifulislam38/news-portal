@@ -5,6 +5,7 @@ const loadCategory = async() =>{
     const data = await res.json();
     displayCategory(data.data.news_category);
 }
+//-----------------------------------------------category data shows from here------------------------------
 const displayCategory = category =>{
     for(const value of category){
         const categoryId = document.getElementById('categoryList');
@@ -18,9 +19,9 @@ const displayCategory = category =>{
 
 
 
-
+//--------------------------------------------news data load from here-----------------------------------------
 const showData = async(value,catName) =>{
-    const spinner = document.getElementById('spinner');
+    const spinner = document.getElementById('spinner');//spinner start
     spinner.style.display = 'block';
     const url = `https://openapi.programming-hero.com/api/news/category/${value}`;
     const res = await fetch(url);
@@ -30,8 +31,7 @@ const showData = async(value,catName) =>{
     const displayNews = document.getElementById('news-display');
     displayNews.innerHTML = '';
     for(const news of allNews){
-        console.log(news);
-        const cardDiv = document.createElement('div');
+        const cardDiv = document.createElement('div');//card created from here
         cardDiv.classList.add('mb-2','p-0','col-12','col-sm-12','col-md-6','col-lg-6');
         cardDiv.setAttribute ('onClick',`modalData('${news._id}')`);
         cardDiv.setAttribute('style','max-width: 560px;');
@@ -69,6 +69,8 @@ const showData = async(value,catName) =>{
         `;
         displayNews.appendChild(cardDiv);
     }
+
+    ///------------------------------news count start----------------------------
     const newsCountField = document.getElementById('newsCount');
     const footer = document.getElementById('footer');
     if(allNews.length <= 0){
@@ -80,11 +82,11 @@ const showData = async(value,catName) =>{
         newsCountField.value = `${allNews.length} news found for ${catName} `;
         footer.style.display = 'flex';
     }
-    spinner.style.display = 'none';
+    spinner.style.display = 'none';//spinner stop here
 
     
 }
-
+//--------------------------------modal data load from here-----------------------
 const modalData = async(newsId) =>{
     const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
     const res = await fetch(url);
@@ -115,6 +117,5 @@ const modalData = async(newsId) =>{
     
 }
 
-
-
 loadCategory();
+//-------------------------------------------------------------end---------------------------------

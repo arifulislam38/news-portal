@@ -60,9 +60,26 @@
         justify-content: center;
         margin-top: 10px;
      }
+    
+     @media screen and (min-width: 576px) {
+        .blog{
+            max-width: 98%;
+        }
+     }
+     @media screen and (min-width: 768px) {
+        .blog{
+            max-width: 98%;
+        }
+     }
+     @media screen and (min-width: 992px) {
+        .blog{
+            max-width: 47%;
+        }
+     }
     </style>
 </head>
 <body>
+    <!-------------------------------------------- header section start ---------------------------------------->
     <header>
         <section class="navbar d-flex justify-content-between align-items-center overflow-hidden">
             <div>
@@ -86,8 +103,9 @@
                 <li><a href="blog-4.html">Blog-4</a></li>
             </ul>
         </section>
-        <section class="row px-4 d-flex gap-3 align-items-center justify-content-center">
-            <div id="blog-1" class="col-6 border" style="max-width:47%;">
+        <!-------------------------------------------- news section start ---------------------------------------->
+        <section class="row px-4 gap-2 align-items-center justify-content-center">
+            <div class="blog col-12 col-md-12 col-lg-6 col-sm-12 col-xl-6 border">
                 <h1>Var, Let, and Const - What's the Difference?</h1>
                 <p>A lot of shiny new features came out with ES2015 (ES6). And now, since it's 2020, it's assumed that a lot of JavaScript developers have become familiar with and have started using these <br>
 
@@ -100,7 +118,7 @@
                 cope essentially means where these variables are available for use. var declarations are globally scoped or function/locally scoped. .......
                 </p>
             </div>
-            <div id="blog-2" class="col-6 border" style="max-width:47%;">
+            <div class="blog col-12 col-md-12 col-lg-6 col-sm-12 col-xl-6  border">
                 <h1>Difference between regular functions and arrow functions</h1>
                 <p> <strong class="fs-2">Syntex</strong> <br>
                     The first and most obvious difference between arrow functions and regular functions is their syntax. Not only do they look different, but arrow functions also provide an implicit return shorthand and allow parenthesis around a single argument to be omitted. <br>
@@ -112,7 +130,7 @@
                 </p>
             </div>
 
-            <div id="blog-3" class="col-6 border" style="max-width:47%;">
+            <div class="blog col-12 col-md-12 col-lg-6 col-sm-12 col-xl-6  border">
                 <h1>Use of forEach(), map(), filter(), find() on JavaScript</h1>
                 <p>
                     <strong>forEach() </strong> <br>
@@ -126,7 +144,7 @@
                 </p>
             </div>
 
-            <div id="blog-4" class="col-6 border" style="max-width:47%;">
+            <div class="blog col-12 col-md-12 col-lg-6 col-sm-12 col-xl-6  border">
                 <h1>Template literals (Template strings)</h1>
                 <p>Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates.
                     Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.
@@ -141,7 +159,7 @@
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    
+    <!-------------------------------------------- footer section start ---------------------------------------->
     <footer>
         <p>Copyright 2022 Live News</p>
     </footer>
