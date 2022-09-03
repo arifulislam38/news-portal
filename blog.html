@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: #F6F6F6;
+        }
+     .navbar{
+        height: 80px;
+        padding:5px 40px;
+     }
+     .navlist{
+        list-style-type: none;
+        display: flex;
+        gap: 10px;
+    }
+    .navlist li{
+         padding: 4px 10px;
+     }
+     .navlist li a{
+        text-decoration: none;
+        color: initial;
+     }
+     .navlist li:hover{
+        background-color: #a197978e;
+     }
+     hr{
+        margin: 0px;
+     }
+    .blog-list{
+        list-style-type: none;
+        color: rgb(14, 13, 13);
+        background-color: cadetblue;
+        box-sizing: border-box;
+        padding: 0px !important;
+        
+    }
+    .blog-list li{
+        padding: 8px 0px;
+    }
+    .blog-list li a{
+        text-decoration: none;
+        color: #f7a50f;
+        font-size: 25px;
+    }
+    .blog-list li:hover{
+        background-color: #e6c5c5a1;
+    } 
+    footer{
+        background-color: #858585;
+        height: 15vh;
+        border-top: 2px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+     }
+    </style>
+</head>
+<body>
+    <header>
+        <section class="navbar d-flex justify-content-between align-items-center overflow-hidden">
+            <div>
+                <img src="liveNews.png" alt="">
+            </div>
+            <div>
+                <ul class="navlist m-0">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </section>
+        <hr>
+    </header>
+    <main>
+        <section class="overflow-hidden mt-3">
+            <ul class="blog-list d-flex align-items-center justify-content-around">
+                <li><a href="blog-1.html">Blog-1</a></li>
+                <li><a href="blog-2.html">Blog-2</a></li>
+                <li><a href="blog-3.html">Blog-3</a></li>
+                <li><a href="blog-4.html">Blog-4</a></li>
+            </ul>
+        </section>
+        <section class="row px-4 d-flex gap-3 align-items-center justify-content-center">
+            <div id="blog-1" class="col-6 border" style="max-width:47%;">
+                <h1>Var, Let, and Const - What's the Difference?</h1>
+                <p>A lot of shiny new features came out with ES2015 (ES6). And now, since it's 2020, it's assumed that a lot of JavaScript developers have become familiar with and have started using these <br>
+
+                In this article, we'll discuss var, let and const  with respect to their scope, use, and hoisting. As you read, take note of the differences between them that I'll point out. <br>
+
+                <strong class="fs-2">Var</strong> <br>
+                Before the advent of ES6, var declarations ruled. There are issues associated with variables declared with var, though. That is why it was necessary for new ways to declare variables to emerge. First, let's get to understand var more before we discuss those issues. <br>
+
+               <strong>Scope of var</strong>
+                cope essentially means where these variables are available for use. var declarations are globally scoped or function/locally scoped. .......
+                </p>
+            </div>
+            <div id="blog-2" class="col-6 border" style="max-width:47%;">
+                <h1>Difference between regular functions and arrow functions</h1>
+                <p> <strong class="fs-2">Syntex</strong> <br>
+                    The first and most obvious difference between arrow functions and regular functions is their syntax. Not only do they look different, but arrow functions also provide an implicit return shorthand and allow parenthesis around a single argument to be omitted. <br>
+
+                    <strong>Execution context</strong> <br>
+                    Inside a regular function, execution context (i.e. the value of this) is dynamic. This means that the value of this depends on how the function was invoked (simple invocation, method invocation, indirect invocation or constructor invocation). On the other hand, an arrow function does not define its own execution context. This results in an arrow function's this being resolved lexically (i.e. the scope in which the arrow function was defined).
+
+                    Function.prototype.call(), Function.prototype.bind()  ......
+                </p>
+            </div>
+
+            <div id="blog-3" class="col-6 border" style="max-width:47%;">
+                <h1>Use of forEach(), map(), filter(), find() on JavaScript</h1>
+                <p>
+                    <strong>forEach() </strong> <br>
+                    Function .forEach() is another form of just a plain for loop that can be used to iterate through array items. This case of a function is used for more complex arrays, for example, an array of objects with a lot of entries than just an array of integers.
+
+                    This function takes 1 parameter .forEach(callback). The parameter callback can take up to 3 parameters element, index & array (but only the element parameter is required, the rest is optional).
+
+                    The parameter element will be used as a variable that stores the current element in the array. Parameter index refers to the element's index in the array and the parameter array points to the array that it was called on.
+
+                    I do have to say that the newer prebuilt loop for..of in JavaScript is way more efficient than the .forEach() in code clarity and its performance....... <br>
+                </p>
+            </div>
+
+            <div id="blog-4" class="col-6 border" style="max-width:47%;">
+                <h1>Template literals (Template strings)</h1>
+                <p>Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates.
+                    Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.
+                    <br>
+                   <strong> Description  </strong> <br>
+                    Template literals are enclosed by backtick (`) characters instead of double or single quotes.
+                    Along with having normal strings, template literals can also contain other parts called placeholders, ........
+                    
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    
+    <footer>
+        <p>Copyright 2022 Live News</p>
+    </footer>
+</body>
+</html>

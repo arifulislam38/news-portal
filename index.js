@@ -70,13 +70,19 @@ const showData = async(value,catName) =>{
         displayNews.appendChild(cardDiv);
     }
     const newsCountField = document.getElementById('newsCount');
+    const footer = document.getElementById('footer');
     if(allNews.length <= 0){
         newsCountField.value = `No data found for ${catName}`;
+        footer.style.display = 'none';
+
     }
     else{
         newsCountField.value = `${allNews.length} news found for ${catName} `;
+        footer.style.display = 'flex';
     }
     spinner.style.display = 'none';
+
+    
 }
 
 const modalData = async(newsId) =>{

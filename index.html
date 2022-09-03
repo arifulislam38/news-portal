@@ -62,6 +62,15 @@
         left: 50%;
         transform: translate(-50%,-50%);
      }
+     footer{
+        background-color: #858585;
+        height: 15vh;
+        border-top: 2px solid white;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        display: none;
+     }
     </style>
 </head>
 <body>
@@ -73,7 +82,7 @@
             <div>
                 <ul class="navlist m-0">
                     <li><a href="index.html">Home</a></li>
-                    <li>Blog</li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </div>
         </section>
@@ -109,7 +118,7 @@
             </ul>
            </div>
            <div class="input-div overflow-hidden mt-3">
-            <input type="text" name="" id="newsCount" class="w-100 h-100 border-0 ps-3">
+            <input type="text" name="" id="newsCount" class="w-100 h-100 border-0 ps-3" disabled>
            </div>
         </section>
 
@@ -150,9 +159,7 @@
                    </div>
                </div>
             </div>
-            <!-- <div class="modal-footer p-0 border-0">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div> -->
+            
             </div>
         </div>
         </div>
@@ -162,5 +169,8 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="index.js"></script>
+    <footer id="footer">
+        <p>Copyright 2022 Live News</p>
+    </footer>
 </body>
 </html>

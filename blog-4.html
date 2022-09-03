@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: #F6F6F6;
+        }
+     .navbar{
+        height: 80px;
+        padding:5px 40px;
+     }
+     .navlist{
+        list-style-type: none;
+        display: flex;
+        gap: 10px;
+    }
+    .navlist li{
+         padding: 4px 10px;
+     }
+     .navlist li a{
+        text-decoration: none;
+        color: initial;
+     }
+     .navlist li:hover{
+        background-color: #a197978e;
+     }
+     hr{
+        margin: 0px;
+     }
+    .blog-list{
+        list-style-type: none;
+        color: rgb(14, 13, 13);
+        background-color: cadetblue;
+        box-sizing: border-box;
+        padding: 0px !important;
+        
+    }
+    .blog-list li{
+        padding: 8px 0px;
+    }
+    .blog-list li a{
+        text-decoration: none;
+        color: #f7a50f;
+        font-size: 25px;
+    }
+    .blog-list li:hover{
+        background-color: #8f8282a1;
+    } 
+    footer{
+        background-color: #858585;
+        height: 15vh;
+        border-top: 2px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+     }
+    </style>
+</head>
+<body>
+    <header>
+        <section class="navbar d-flex justify-content-between align-items-center overflow-hidden">
+            <div>
+                <img src="liveNews.png" alt="">
+            </div>
+            <div>
+                <ul class="navlist m-0">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </section>
+        <hr>
+    </header>
+    <main>
+        <section class="overflow-hidden mt-3">
+            <ul class="blog-list d-flex align-items-center justify-content-around">
+                <li><a href="blog-1.html">Blog-1</a></li>
+                <li><a href="blog-2.html">Blog-2</a></li>
+                <li><a href="blog-3.html">Blog-3</a></li>
+                <li><a href="blog-4.html">Blog-4</a></li>
+            </ul>
+        </section>
+        <section class="container">
+            <div id="blog-4">
+                <h1>Var, Let, and Const - What's the Difference?</h1>
+                <p> <p>Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates.
+
+                    Template literals are sometimes informally called template strings, because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). However, a tagged template literal may not result in a string; it can be used with a custom tag function to perform whatever operations you want on the different parts of the template literal.
+                    <br>
+                   <strong> Description  </strong> <br>
+                    Template literals are enclosed by backtick (`) characters instead of double or single quotes.
+                    Along with having normal strings, template literals can also contain other parts called placeholders, which are embedded expressions delimited by a dollar sign and curly braces: ${expression}. The strings and placeholders get passed to a function — either a default function, or a function you supply. The default function (when you don't supply your own) just performs string interpolation to do substitution of the placeholders and then concatenate the parts into a single string.
+                    
+                    To supply a function of your own, precede the template literal with a function name; the result is called a tagged template. In that case, the template literal is passed to your tag function, where you can then perform whatever operations you want on the different parts of the template literal.
+                    To escape a backtick in a template literal, put a backslash (\) before the backtick. <br>
+
+                     <strong>Multi-line strings</strong> <br>
+                    Any newline characters inserted in the source are part of the template literal. <br>
+
+                    <strong>String interpolation</strong> <br>
+                    Without template literals, when you want to combine output from expressions with strings, you'd concatenate them using the addition operator +: <br>
+
+                    <strong>Nesting templates </strong> <br>
+                    In certain cases, nesting a template is the easiest (and perhaps more readable) way to have configurable strings. Within a backtick-delimited template, it is simple to allow inner backticks by using them inside an ${expression} placeholder within the template.
+                </p>
+
+
+                </p>
+            </div>
+        </section>
+    </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <footer>
+            <p>Copyright 2022 Live News</p>
+        </footer>
+    </body>
+    </html>
