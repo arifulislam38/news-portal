@@ -48,9 +48,12 @@ const showData = async(value,catName) =>{
                     <p class="">${news.details.length > 70? `${news.details.slice(0,100)} ......` : news.details}</p>
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
-                    <p class="d-flex flex-column">
+                    <p class="d-flex">
+                        <span><img src="${news.author.img? news.author.img: 'image not found'}" style="width:40px; height:40px; border-radius:50%;"></span>
+                        <span class="d-flex flex-column">
                         <span>${news.author.name? news.author.name : "Author not found"}</span>
                         <span>${news.author.published_date? news.author.published_date : "publishing date not found"}</span>
+                        </span>
                     </p>
                     <p class="d-flex gap-1">
                         <span><i class="fa-regular fa-eye"></i></span>
