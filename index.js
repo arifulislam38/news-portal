@@ -1,4 +1,3 @@
-const spinner = document.getElementById('spinner');
 
 const loadCategory = async() =>{
     const url = `https://openapi.programming-hero.com/api/news/categories`;
@@ -7,7 +6,6 @@ const loadCategory = async() =>{
     displayCategory(data.data.news_category);
 }
 const displayCategory = category =>{
-    spinner.style.display = 'block';
     for(const value of category){
         console.log(value.category_name);
         const categoryId = document.getElementById('categoryList');
@@ -17,13 +15,13 @@ const displayCategory = category =>{
         categoryId.appendChild(li);
         
     }
-    spinner.style.display = 'none';
 }
 
 
 
 
 const showData = async(value,catName) =>{
+    const spinner = document.getElementById('spinner');
     spinner.style.display = 'block';
     const url = `https://openapi.programming-hero.com/api/news/category/${value}`;
     const res = await fetch(url);
@@ -36,7 +34,9 @@ const showData = async(value,catName) =>{
         console.log(news);
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('mb-2','p-0','col-6');
-        cardDiv.setAttribute('style','max-width: 560px;')
+        cardDiv.setAttribute('style','max-width: 560px;');
+        cardDiv.setAttribute ('data-bs-toggle','modal');
+        cardDiv.setAttribute ('data-bs-target','#exampleModal');
         cardDiv.innerHTML = `
         <div class="pointer row border rounded m-0 p-2">
             <div class="col-3 ps-0">
@@ -44,7 +44,7 @@ const showData = async(value,catName) =>{
             </div>
          <div class="col-9 pe-2 ps-0 d-grid align-items-center justify-content-center">
                 <div>
-                    <h5 class="">${news.title.length > 30? `${news.title.slice(0,30)} ....` : news.details}</h5>
+                    <h5 class="">${news.title.length > 30? `${news.title.slice(0,30)} ....` : news.title}</h5>
                     <p class="">${news.details.length > 70? `${news.details.slice(0,100)} ......` : news.details}</p>
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
@@ -74,8 +74,10 @@ const showData = async(value,catName) =>{
         newsCountField.value = `No data found for ${catName}`;
     }
     else{
-        newsCountField.value = `${newsEs.length} items found for ${catName} `;
+        newsCountField.value = `${newsEs.length} news found for ${catName} `;
     }
     spinner.style.display = 'none';
 }
+
+
 loadCategory();
