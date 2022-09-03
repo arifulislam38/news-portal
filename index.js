@@ -26,14 +26,14 @@ const showData = async(value,catName) =>{
     const url = `https://openapi.programming-hero.com/api/news/category/${value}`;
     const res = await fetch(url);
     const data = await res.json();
-    const newsEs = data.data;
-    console.log(newsEs.length);
+    const allNews = data.data;
     const displayNews = document.getElementById('news-display');
     displayNews.innerHTML = '';
-    for(const news of newsEs){
+    for(const news of allNews){
         console.log(news);
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('mb-2','p-0','col-6');
+        cardDiv.setAttribute ('onClick',`modalData('${news._id}')`);
         cardDiv.setAttribute('style','max-width: 560px;');
         cardDiv.setAttribute ('data-bs-toggle','modal');
         cardDiv.setAttribute ('data-bs-target','#exampleModal');
@@ -70,14 +70,22 @@ const showData = async(value,catName) =>{
         displayNews.appendChild(cardDiv);
     }
     const newsCountField = document.getElementById('newsCount');
-    if(newsEs.length <= 0){
+    if(allNews.length <= 0){
         newsCountField.value = `No data found for ${catName}`;
     }
     else{
-        newsCountField.value = `${newsEs.length} news found for ${catName} `;
+        newsCountField.value = `${allNews.length} news found for ${catName} `;
     }
     spinner.style.display = 'none';
 }
+
+const modalData = async(newsId) =>{
+    const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
+}
+
 
 
 loadCategory();
