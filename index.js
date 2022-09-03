@@ -32,7 +32,7 @@ const showData = async(value,catName) =>{
     for(const news of allNews){
         console.log(news);
         const cardDiv = document.createElement('div');
-        cardDiv.classList.add('mb-2','p-0','col-6');
+        cardDiv.classList.add('mb-2','p-0','col-12','col-sm-12','col-md-6','col-lg-6');
         cardDiv.setAttribute ('onClick',`modalData('${news._id}')`);
         cardDiv.setAttribute('style','max-width: 560px;');
         cardDiv.setAttribute ('data-bs-toggle','modal');
