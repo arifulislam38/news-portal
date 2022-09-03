@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/e6c7fdc23f.js" crossorigin="anonymous"></script>
     <style>
-        /* *{margin: 0; padding: 0; box-sizing: border-box;} */
         body{
             background-color: #F6F6F6;
         }
@@ -19,7 +18,17 @@
      .navlist{
         list-style-type: none;
         display: flex;
-        gap: 20px;
+        gap: 10px;
+    }
+    .navlist li{
+         padding: 4px 10px;
+     }
+     .navlist li a{
+        text-decoration: none;
+        color: initial;
+     }
+     .navlist li:hover{
+        background-color: #a197978e;
      }
      hr{
         margin: 0px;
@@ -53,25 +62,17 @@
         left: 50%;
         transform: translate(-50%,-50%);
      }
-     /* .modal-dialog, .modal-content{
-        width: 90vw;
-        height: 90vh;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-     } */
     </style>
 </head>
 <body>
     <header class="container">
         <section class="navbar d-flex justify-content-between align-items-center overflow-hidden">
             <div>
-                <h2>Logo</h2>
+                <img src="liveNews.png" alt="">
             </div>
             <div>
                 <ul class="navlist m-0">
-                    <li>Home</li>
+                    <li><a href="index.html">Home</a></li>
                     <li>Blog</li>
                 </ul>
             </div>
@@ -123,11 +124,11 @@
         <section>
 
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 
-            <div class="modal-header">
+            <div class="modal-header px-5">
                 <div id="author" class="d-flex align-items-center justify-content-center gap-3">
 
                 </div>
@@ -140,7 +141,7 @@
                <div id="modal-text" class="col-7">
                    <div class="d-flex gap-5">
                     <p class="d-flex gap-3">
-                        <span id="authorName"></span>
+                        
                         <span id="publishDate"></span>
                     </p>
                     <p id="badge">
@@ -149,9 +150,9 @@
                    </div>
                </div>
             </div>
-            <div class="modal-footer p-0 border-0">
+            <!-- <div class="modal-footer p-0 border-0">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+            </div> -->
             </div>
         </div>
         </div>
